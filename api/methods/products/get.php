@@ -1,5 +1,5 @@
 <?php 
-    function getProdutos($id) {
+    function getProducts($id) {
         global $conn;
 
         $sqlProdutos = "SELECT * FROM produtos";

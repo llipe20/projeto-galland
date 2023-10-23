@@ -1,7 +1,5 @@
 <?php 
-    include_once 'conexao.php';
-
-    function getPedidos($id) {
+    function getRequests($id) {
         global $conn;
     
         // comando SQL para trazer TODOS os dados relacionados a pedidos
