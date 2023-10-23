@@ -4,6 +4,7 @@
     function getPedidos($id) {
         global $conn;
     
+        // comando SQL para trazer TODOS os dados relacionados a pedidos
         $sql = "SELECT
             pedidos.id as pedido_id,
             pedidos.valor as pedido_valor,
@@ -44,13 +45,13 @@
             LEFT JOIN
                 adicionais ON adicionais_pedidos.adicional = adicionais.id";
         
+        // Verificando se a consulta é especifica
         if ($id !== '') {
             $sql.= " WHERE pedidos.cliente = $id";
         }
-    
-        // Executa as consultas
         $result = mysqli_query($conn, $sql);
-    
+        
+        // Resposta se não encontrar nada
         if (!$result) {
             header("HTTP/1.0 500 Internal Server Error");
             echo json_encode(['error' => 'Erro ao obter produtos e adicionais']);
@@ -113,6 +114,7 @@
                 $pedidos[count($pedidos) - 1]['adicionais'][] = $adicional;
             }
     
+            // Enviando dados 
             header('Content-Type: application/json');
             echo json_encode($pedidos, JSON_PRETTY_PRINT);
         }

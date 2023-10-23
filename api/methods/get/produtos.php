@@ -1,11 +1,11 @@
 <?php 
-
     function getProdutos($id) {
         global $conn;
 
         $sqlProdutos = "SELECT * FROM produtos";
         $sqlAdicionais = "SELECT * FROM adicionais";
 
+        // Verificando se as consultas são especificas
         if ($id !== '') {
             $sqlProdutos .= " WHERE id = $id";
             $sqlAdicionais .= " WHERE id = $id";
@@ -33,6 +33,7 @@
                 $produtos['adicionais'][] = $row;
             }
 
+            // Enviando dados
             header('Content-Type: application/json');
             echo json_encode($produtos, JSON_PRETTY_PRINT);
         }

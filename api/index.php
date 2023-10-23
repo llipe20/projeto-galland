@@ -1,4 +1,5 @@
 <?php 
+    // incluir os arquivos de requisições
     $directory = 'methods/get/';
     $files = glob($directory . '*.php');
     
@@ -6,11 +7,11 @@
         include_once $file;
     }
 
-    getProdutos('');
-
+    // capturando o método e dados da url
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+    // resposta em relação ao método chamado
     switch($method) {
         case 'GET':
             switch($path) {
@@ -23,7 +24,7 @@
                     }
                 break;
                 case '/pedidos':
-                    if(strpos($path, '/pedidos/') === 0) {  // Rota para obter um usuário específico
+                    if(strpos($path, '/pedidos/') === 0) {  
                         $id = intval(substr($path, strlen('/pedidos/')));
                         getPedidos($id); 
                     } else {
@@ -31,7 +32,7 @@
                     }
                 break;
                 case '/login':
-                    if(strpos($path, '/login/') === 0) {  // Rota para obter um usuário específico
+                    if(strpos($path, '/login/') === 0) {  
                         $id = intval(substr($path, strlen('/login/')));
                         getLogin($id); 
                     } else {
