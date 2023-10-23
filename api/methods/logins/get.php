@@ -23,6 +23,7 @@
             // Enviando dados
             header('Content-Type: application/json');
             echo json_encode($login, JSON_PRETTY_PRINT);
+            mysqli_close($conn);
         }
     }
 ?>

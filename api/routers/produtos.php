@@ -20,7 +20,8 @@
             getProducts($id);
         break;
         case 'POST':
-
+            $data = json_decode(file_get_contents("php://input"), true);
+            createProdutc($data);
         break;
         case 'PUT':
 

@@ -11,7 +11,7 @@
     // capturando o método e dados da url
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
+    
     // resposta em relação ao método chamado
     switch($method) {
         case 'GET':
@@ -20,7 +20,8 @@
             getLogin($id);
         break;
         case 'POST':
-
+            $data = json_decode(file_get_contents("php://input"), true);
+            createLogin($data);
         break;
         case 'PUT':
 
@@ -29,7 +30,7 @@
 
         break;
         default:
-            header("HTTP/1.0 405 Rota não encontrada");
+            header("HTTP/1.0 405 Rota nao encontrada");
         break;
     }
 ?>

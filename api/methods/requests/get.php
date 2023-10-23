@@ -115,6 +115,7 @@
             // Enviando dados 
             header('Content-Type: application/json');
             echo json_encode($pedidos, JSON_PRETTY_PRINT);
+            mysqli_close($conn);
         }
     }
 ?>
