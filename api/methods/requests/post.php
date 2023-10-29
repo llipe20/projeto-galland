@@ -3,7 +3,7 @@
         global $conn;
 
         // inseri o cliente se não houver cadastro e pega id
-        if($data['cliente_id'] == '') {
+        if($data['cliente_id'] == "") {
             $cliente = [
                 'nome' => $data['cliente_nome'],
                 'email' => $data['cliente_email'],
@@ -12,7 +12,7 @@
                 'bairro' => $data['cliente_bairro'],
                 'casa' => $data['cliente_casa'],
                 'ref' => $data['cliente_referencia'],
-                'user' => $data['login_user']
+                'user' => $data['id_login']
             ];
             $idCliente = insertCliente($cliente, $conn);
         } else {
@@ -73,7 +73,7 @@
         $cliente = mysqli_escape_string($conn, $data['cliente']);
         $valor = mysqli_escape_string($conn, $data['valor']);
         $pag = mysqli_escape_string($conn, $data['pag']);
-        $situacao = mysqli_escape_string($conn, $data['situacao']);
+        $situacao = mysqli_escape_string($conn, $data['status']);
         $obs = mysqli_escape_string($conn, $data['obs']);
         $delivery = mysqli_escape_string($conn, $data['delivery']);
 
