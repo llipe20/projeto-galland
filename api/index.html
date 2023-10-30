@@ -5,25 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APi Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg {
+            background-color: #0F172A;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div>
+    <div class="flex w-screen min-h-screen bg text-slate-400">
+        <!-- Barra de navegação lateral -->
+        <section class="flex flex-col justify-between items-center gap-2.5 w-1/5 h-screen border-r border-slate-700">
+            <!-- Logo -->
+            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+                <span>
+                    Projeto Galland
+                </span>                
+            </div>
 
-        </div>
-        <div>
-            <h1>
-                Projeto Galland - API REST
-            </h1>
-            
-            <h2>
-                Finalidade
-            </h2>
-            <p>
-                O projeto consiste em desenvolver uma mini API para fazer a ponte entre um banco de dados e o front end de uma aplicação especifica. Ou seja, a api servirá apenas para essa aplicação, a menos que queira usar pra testar mesmo.
-            </p>
+             <!-- Links iniciais -->
+            <nav class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
+                <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#intro" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Introdução
+                        </a>
+                    </div>
 
-        </div>
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#finalidade" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Finalidade
+                        </a>
+                    </div>
+
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#usar" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Como usar
+                        </a>
+                    </div>
+                </div>
+                
+                 <!-- Methods links -->
+                <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#get" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Method GET
+                        </a>
+                    </div>
+
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#post" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Method POST
+                        </a>
+                    </div>
+
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#put" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Method PUT
+                        </a>
+                    </div>
+
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#patch" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Method PATCH
+                        </a>
+                    </div>
+
+                    <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+                        <a href="#delete" class="text-base text-left w-full hover:border-b border-slate-700">
+                            Method DELETE
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+             <!-- Contato link -->
+            <nav class="flex flex-row justify-center items-center gap-2 5 w-full h-24">
+                <a href="" class="hover:text-slate-300">
+                    insta
+                </a>
+
+                <a href="" class="hover:text-slate-300">
+                    github
+                </a>
+            </nav>
+        </section>
+
+         <!-- Conteúdo principal -->
+        <main>
+            <section id="intro">
+                <h1>
+                    Projeto Galland - API REST
+                </h1>
+    
+                <h2>
+                    Finalidade
+                </h2>
+                <p>
+                    O projeto consiste em desenvolver uma mini API para fazer a ponte entre um banco de dados e o front end de uma aplicação especifica. Ou seja, a api servirá apenas para essa aplicação, a menos que queira usar pra testar mesmo.
+                </p>
+            </section>
+        </main>
     </div>
 </body>
 <script>
@@ -82,7 +166,5 @@
 
         console.log(req)
 }
-
-mahoraga()
 </script>
 </html>
