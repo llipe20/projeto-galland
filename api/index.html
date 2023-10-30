@@ -11,12 +11,12 @@
         }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <div class="flex w-screen min-h-screen bg text-slate-400">
         <!-- Barra de navegação lateral -->
-        <section class="flex flex-col justify-between items-center gap-2.5 w-1/5 h-screen border-r border-slate-700">
+        <section class="flex flex-col justify-between items-center gap-2.5 w-1/5 h-screen border-r border-slate-700 fixed">
             <!-- Logo -->
-            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-lg">
+            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-2xl pt-8">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
@@ -29,19 +29,19 @@
             <nav class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                 <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#intro" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#intro" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Introdução
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#finalidade" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#finalidade" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Finalidade
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#usar" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#usar" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Como usar
                         </a>
                     </div>
@@ -50,31 +50,31 @@
                  <!-- Methods links -->
                 <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#get" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#get" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Method GET
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#post" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#post" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Method POST
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#put" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#put" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Method PUT
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#patch" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#patch" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Method PATCH
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#delete" class="text-base text-left w-full hover:border-b border-slate-700">
+                        <a href="#delete" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Method DELETE
                         </a>
                     </div>
@@ -94,17 +94,42 @@
         </section>
 
          <!-- Conteúdo principal -->
-        <main>
-            <section id="intro">
-                <h1>
-                    Projeto Galland - API REST
-                </h1>
-    
-                <h2>
-                    Finalidade
+        <main class="flex flex-col justify-start items-center gap-2.5 p-8 w-4/5 ml-80">
+            <section id="intro" class="flex flex-col justify-evenly items-start gap-3 w-full p-4 text-lg">
+                <h2 class="text-4xl text-white">
+                   Introdução 
                 </h2>
-                <p>
+
+                <p class="w-4/5">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolores ad pariatur molestiae quibusdam! Commodi, sit at saepe fugit, fuga aut natus inventore consequatur laborum cum blanditiis id dolorem illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora placeat sapiente mollitia fugit, laborum quos quo doloremque consequuntur esse, molestias minima aut voluptate autem, ducimus velit distinctio recusandae reprehenderit. Quibusdam!
+                </p>
+            </section>
+
+            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-3 w-full p-4 text-lg">
+                <h2 class="text-4xl text-white">
+                   Finalidade 
+                </h2>
+
+                <p class="w-4/5">
                     O projeto consiste em desenvolver uma mini API para fazer a ponte entre um banco de dados e o front end de uma aplicação especifica. Ou seja, a api servirá apenas para essa aplicação, a menos que queira usar pra testar mesmo.
+                </p>
+
+                <p class="w-4/5">
+                    A aplicação especifica, é a construção de um cardápio online para uma sorveteria, onde pretendo usar esta API para coletar os dados de clientes, pedidos e produtos no banco de dados, trazendo mais dinamismo, facilitando o trabalho do desenvolvedor.
+                </p>
+            </section>
+
+            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-3 w-full p-4 text-lg">
+                <h2 class="text-4xl text-white">
+                   Modo de usar 
+                </h2>
+
+                <p class="w-4/5">
+                   Como havia anteriormente, esta API servirá especificamente para uma única aplicação. Não contém informações relevantes para uso casual e para outros tipos de projetos, igual a API de filmes, satélites e etc... 
+                </p>
+
+                <p class="w-4/5">
+                    Mas, caso queira testar e tals, é bem simples. Basta colocar a url da API na sua requisição e configurar os método de envio, cabeçalhos e etc... 
                 </p>
             </section>
         </main>
