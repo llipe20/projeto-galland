@@ -16,7 +16,7 @@
         <!-- Barra de navegação lateral -->
         <section class="flex flex-col justify-between items-center gap-2.5 w-1/5 h-screen border-r border-slate-700 fixed">
             <!-- Logo -->
-            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-2xl pt-8">
+            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-2xl pt-8 text-blue-600">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
@@ -95,7 +95,7 @@
 
          <!-- Conteúdo principal -->
         <main class="flex flex-col justify-start items-center gap-2.5 p-8 w-4/5 ml-80">
-            <section id="intro" class="flex flex-col justify-evenly items-start gap-3 w-full p-4 text-lg">
+            <section id="intro" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
                 <h2 class="text-4xl text-white">
                    Introdução 
                 </h2>
@@ -105,7 +105,7 @@
                 </p>
             </section>
 
-            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-3 w-full p-4 text-lg">
+            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
                 <h2 class="text-4xl text-white">
                    Finalidade 
                 </h2>
@@ -119,18 +119,35 @@
                 </p>
             </section>
 
-            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-3 w-full p-4 text-lg">
+            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
                 <h2 class="text-4xl text-white">
                    Modo de usar 
                 </h2>
 
                 <p class="w-4/5">
-                   Como havia anteriormente, esta API servirá especificamente para uma única aplicação. Não contém informações relevantes para uso casual e para outros tipos de projetos, igual a API de filmes, satélites e etc... 
+                   Como havia anteriormente, esta API servirá especificamente para uma única aplicação. Por isso, não contém informações relevantes para uso casual e para outros projetos, como a API de filmes, satélites e etc... Mas, caso queira testar e tals, é bem simples. Basta colocar a url da API - <span class="text-blue-600">localhost/api/routers/ ... nome da rota</span>, a aplicação possui três rotas, são elas: pedidos, produtos e login- na sua requisição e configurar os método de envio, cabeçalhos e etc... 
                 </p>
+            </section>
 
-                <p class="w-4/5">
-                    Mas, caso queira testar e tals, é bem simples. Basta colocar a url da API na sua requisição e configurar os método de envio, cabeçalhos e etc... 
-                </p>
+            <section id="get" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
+                <h2 class="text-4xl text-white">
+                   Requisições GET
+                </h2>
+
+                <h3 class="text-2xl text-blue-600">
+                    Pedidos
+                </h3>
+
+                <div class="flex flex-col justify-between items-center w-4/5 h-24 rounded-xl">
+                    <div class="flex flex-row justify-start items-center gap-2.5 w-full h-8 bg-blue-900 pl-4">
+                        <span class="text-lg text-white">
+                            URL de entrada:
+                        </span>
+                    </div>
+                    <div class="flex flex-col justify-center items-center w-full h-20  bg-gray-800">
+
+                    </div>
+                </div>
             </section>
         </main>
     </div>
