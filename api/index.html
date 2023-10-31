@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APi Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/function.js" defer></script>
     <style>
         .bg {
             background-color: #0F172A;
+        }
+
+        .font {
+            font-family: 'Fira Code', monospace;
         }
     </style>
 </head>
@@ -29,6 +37,7 @@
             <nav class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                 <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
+  
                         <a href="#intro" class="text-lg text-left w-full hover:border-b border-slate-700">
                             Introdução
                         </a>
@@ -51,31 +60,31 @@
                 <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
                         <a href="#get" class="text-lg text-left w-full hover:border-b border-slate-700">
-                            Method GET
+                            Method Get
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
                         <a href="#post" class="text-lg text-left w-full hover:border-b border-slate-700">
-                            Method POST
+                            Method Post
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
                         <a href="#put" class="text-lg text-left w-full hover:border-b border-slate-700">
-                            Method PUT
+                            Method Put
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
                         <a href="#patch" class="text-lg text-left w-full hover:border-b border-slate-700">
-                            Method PATCH
+                            Method Patch
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
                         <a href="#delete" class="text-lg text-left w-full hover:border-b border-slate-700">
-                            Method DELETE
+                            Method Delete
                         </a>
                     </div>
                 </div>
@@ -83,11 +92,11 @@
 
              <!-- Contato link -->
             <nav class="flex flex-row justify-center items-center gap-2 5 w-full h-24">
-                <a href="" class="hover:text-slate-300">
+                <a href="https://instagram.com/___llpe" target="_blank" class="hover:text-slate-300">
                     insta
                 </a>
 
-                <a href="" class="hover:text-slate-300">
+                <a href="https://github.com/llipe20" target="_blank" class="hover:text-slate-300">
                     github
                 </a>
             </nav>
@@ -129,84 +138,228 @@
                 </p>
             </section>
 
-            <section id="get" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
+            <section id="get" class="flex flex-col justify-evenly items-start gap-10 w-full p-4 text-lg">
                 <h2 class="text-4xl text-white">
                    Requisições GET
                 </h2>
 
-                <h3 class="text-2xl text-blue-600">
-                    Pedidos
-                </h3>
+                <div class="flex flex-col justify-evenly items-start gap-5 w-full">
+                    <h3 class="text-2xl text-blue-600">
+                        Pedidos
+                    </h3>
 
-                <div class="flex flex-col justify-between items-center w-4/5 h-24 rounded-xl">
-                    <div class="flex flex-row justify-start items-center gap-2.5 w-full h-8 bg-blue-900 pl-4">
-                        <span class="text-lg text-white">
-                            URL de entrada:
-                        </span>
+                    <!-- URL de entrada // pedido -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                URL de entrada:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                            <span class="font text-base">
+                                http://localhost/api/routers/pedidos.php
+                            </span>
+                        </div>
                     </div>
-                    <div class="flex flex-col justify-center items-center w-full h-20  bg-gray-800">
 
+                    <p class="w-4/5 pt-2 pb-2">
+                        Caso queira um pedido específico, basta passar o <span class="text-blue-600">id do pedido</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: pedidos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
+                    </p>
+
+                    <!-- URL de saida // pedido -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Saída:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
+                           <pre class="font text-base">
+<code >
+    {
+        "pedido_id": "1",
+        "pedido_valor": "50.00",
+        "pedido_pagamento": "PIX",
+        "pedido_situacao": "Finalizado",
+        "pedido_obs": "",
+        "pedido_delivery": "0",
+        "cliente_id": "1",
+        "cliente_nome": "Felipe",
+        "cliente_email": "fs2284511@mail.com",
+        "cliente_fone": "(99) 98447-0567",
+        "cliente_rua": "Vinte e um de abril",
+        "cliente_bairro": "Volta Redonda",
+        "cliente_casa": "1279",
+        "cliente_referencia": "Prox a escoila",
+        "produtos": [
+            {
+                "produto_id": "1",
+                "produto_nome": "Açai 200ml",
+                "produto_tipo": "Açais",
+                "quantidade_produto": "1",
+                "produto_imagem": "null",
+                "produto_valor": "12.00"
+            },
+            {
+                "produto_id": "1",
+                "produto_nome": "Açai 200ml",
+                "produto_tipo": "Açais",
+                "quantidade_produto": "1",
+                "produto_imagem": "null",
+                "produto_valor": "12.00"
+            }
+        ],
+        "adicionais": [
+            {
+                "adicional_id": "1",
+                "adicional_nome": "chocolate",
+                "adicional_tipo": "Adicionais",
+                "quantidade_adicional": "1",
+                "adicional_imagem": "null",
+                "adicional_valor": "2.00"
+            },
+            {
+                "adicional_id": "2",
+                "adicional_nome": "banana",
+                "adicional_tipo": "Adicionais",
+                "quantidade_adicional": "2",
+                "adicional_imagem": "null",
+                "adicional_valor": "2.00"
+            }
+        ]
+    }
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- get produtos -->
+                <div class="flex flex-col justify-evenly items-start gap-5 w-full">
+                    <h3 class="text-2xl text-blue-600">
+                        Produtos
+                    </h3>
+
+                    <!-- URL de entrada // produtos -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                URL de entrada:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                            <span class="font text-base">
+                                http://localhost/api/routers/produtos.php
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="w-4/5 pt-2 pb-2">
+                        Caso queira encontrar um produto específico, basta passar o <span class="text-blue-600">id do produto</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: produtos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
+                    </p>
+
+                    <!-- URL de saida // produtos -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Saída:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
+                            <pre class="font text-base">
+<code >
+    {
+        "produtos": [
+            {
+                "id": "1",
+                "nome": "Açai 200ml",
+                "tipo": "Açais",
+                "imagem": "null",
+                "valor": "12.00",
+                "estoque": "22"
+            },
+            {
+                "id": "2",
+                "nome": "Açai 350ml",
+                "tipo": "Açais",
+                "imagem": "null",
+                "valor": "15.00",
+                "estoque": "33"
+            }
+        ],
+        "adicionais": [
+            {
+                "id": "1",
+                "nome": "chocolate",
+                "tipo": "Adicionais",
+                "imagem": "null",
+                "valor": "2.00",
+                "estoque": "20"
+            },
+            {
+                "id": "2",
+                "nome": "banana",
+                "tipo": "Adicionais",
+                "imagem": "null",
+                "valor": "2.00",
+                "estoque": "40"
+            }
+        ]
+    }
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- get usuários -->
+                <div class="flex flex-col justify-evenly items-start gap-5 w-full">
+                    <h3 class="text-2xl text-blue-600">
+                        Usuários
+                    </h3>
+                    
+                    <p class="w-4/5 pb-2">
+                        Vale ressaltar que não é possivel consultar todos os usuários em uma única requisição, ou seja, a URL deve receber o <span class="text-blue-600">id do usuário</span> como um parâmetro para que a requisição retorne algo. <span class="text-blue-600">Ex: login/2</span>. 
+                    </p>
+
+                    <!-- URL de entrada // usuários -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                URL de entrada:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                            <span class="font text-base">
+                                http://localhost/api/routers/login.php/2
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- URL de saida // usuários -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Saída:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b mb-">
+                            <pre class="font text-base">
+<code>
+    {
+        "id": "2",
+        "nome": "Nara",
+        "usuario": "silvahlipe@gmail.com",
+        "senha": "https:\/\/localhost:3000"
+    }
+</code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
 </body>
-<script>
-    async function mahoraga() {
-        const data = 
-            {
-                "id_login":"2",
-                "pedido_valor": 20,
-                "pedido_pagamento": "debito",
-                "pedido_situacao": "Finalizado",
-                "pedido_obs": "sem cebola",
-                "pedido_delivery": false,
-                "cliente_id": "",
-                "cliente_nome": "Gih maia",
-                "cliente_email": "fs2284511@mail.com",
-                "cliente_fone": "(99) 98447-0567",
-                "cliente_rua": "Vinte e um de abril",
-                "cliente_bairro": "Volta Redonda",
-                "cliente_casa": "1279",
-                "cliente_referencia": "Prox a escoila",
-                "produtos": [
-                    {
-                        "produto_id": "1",
-                        "quantidade_produto": "1"
-                    },
-                    {
-                        "produto_id": "2",
-                        "quantidade_produto": "4"
-                    },
-                    {
-                        "produto_id": "3",
-                        "quantidade_produto": "2"
-                    }
-                ],
-                "adicionais": [
-                    {
-                        "adicional_id": "1",
-                        "quantidade_adicional": "1",
-                    },
-                    {
-                        "adicional_id": "2",
-                        "quantidade_adicional": "2",
-                    }
-                ]
-            }
-
-            const url = 'http://localhost/api/routers/pedidos.php'
-
-            req = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-
-        console.log(req)
-}
-</script>
 </html>
