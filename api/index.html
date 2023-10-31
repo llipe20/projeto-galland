@@ -359,6 +359,229 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Requisições POST -->
+            <section id="post" class="flex flex-col justify-evenly items-start gap-10 w-full p-4 text-lg">
+                <h2 class="text-4xl text-white">
+                   Requisições POST
+                </h2>
+
+                <div class="flex flex-col justify-evenly items-start gap-5 w-full">
+                    <h3 class="text-2xl text-blue-600">
+                        Pedidos
+                    </h3>
+
+                    <!-- URL de entrada // pedido -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                URL de entrada:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                            <span class="font text-base">
+                                http://localhost/api/routers/pedidos.php
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="w-4/5 pt-2 pb-2">
+                        Caso queira um pedido específico, basta passar o <span class="text-blue-600">id do pedido</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: pedidos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
+                    </p>
+
+                    <!-- URL de saida // pedido -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Saída:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
+                           <pre class="font text-base">
+<code >
+    {
+        "pedido_id": "1",
+        "pedido_valor": "50.00",
+        "pedido_pagamento": "PIX",
+        "pedido_situacao": "Finalizado",
+        "pedido_obs": "",
+        "pedido_delivery": "0",
+        "cliente_id": "1",
+        "cliente_nome": "Felipe",
+        "cliente_email": "fs2284511@mail.com",
+        "cliente_fone": "(99) 98447-0567",
+        "cliente_rua": "Vinte e um de abril",
+        "cliente_bairro": "Volta Redonda",
+        "cliente_casa": "1279",
+        "cliente_referencia": "Prox a escoila",
+        "produtos": [
+            {
+                "produto_id": "1",
+                "produto_nome": "Açai 200ml",
+                "produto_tipo": "Açais",
+                "quantidade_produto": "1",
+                "produto_imagem": "null",
+                "produto_valor": "12.00"
+            },
+            {
+                "produto_id": "1",
+                "produto_nome": "Açai 200ml",
+                "produto_tipo": "Açais",
+                "quantidade_produto": "1",
+                "produto_imagem": "null",
+                "produto_valor": "12.00"
+            }
+        ],
+        "adicionais": [
+            {
+                "adicional_id": "1",
+                "adicional_nome": "chocolate",
+                "adicional_tipo": "Adicionais",
+                "quantidade_adicional": "1",
+                "adicional_imagem": "null",
+                "adicional_valor": "2.00"
+            },
+            {
+                "adicional_id": "2",
+                "adicional_nome": "banana",
+                "adicional_tipo": "Adicionais",
+                "quantidade_adicional": "2",
+                "adicional_imagem": "null",
+                "adicional_valor": "2.00"
+            }
+        ]
+    }
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- get produtos -->
+                <div class="flex flex-col justify-evenly items-start gap-5 w-full">
+                    <h3 class="text-2xl text-blue-600">
+                        Produtos
+                    </h3>
+
+                    <!-- URL de entrada // produtos -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                URL de entrada:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                            <span class="font text-base">
+                                http://localhost/api/routers/produtos.php
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="w-4/5 pt-2 pb-2">
+                        Caso queira encontrar um produto específico, basta passar o <span class="text-blue-600">id do produto</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: produtos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
+                    </p>
+
+                    <!-- URL de saida // produtos -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Saída:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
+                            <pre class="font text-base">
+<code >
+    {
+        "produtos": [
+            {
+                "id": "1",
+                "nome": "Açai 200ml",
+                "tipo": "Açais",
+                "imagem": "null",
+                "valor": "12.00",
+                "estoque": "22"
+            },
+            {
+                "id": "2",
+                "nome": "Açai 350ml",
+                "tipo": "Açais",
+                "imagem": "null",
+                "valor": "15.00",
+                "estoque": "33"
+            }
+        ],
+        "adicionais": [
+            {
+                "id": "1",
+                "nome": "chocolate",
+                "tipo": "Adicionais",
+                "imagem": "null",
+                "valor": "2.00",
+                "estoque": "20"
+            },
+            {
+                "id": "2",
+                "nome": "banana",
+                "tipo": "Adicionais",
+                "imagem": "null",
+                "valor": "2.00",
+                "estoque": "40"
+            }
+        ]
+    }
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- get usuários -->
+                <div class="flex flex-col justify-evenly items-start gap-5 w-full">
+                    <h3 class="text-2xl text-blue-600">
+                        Usuários
+                    </h3>
+                    
+                    <p class="w-4/5 pb-2">
+                        Vale ressaltar que não é possivel consultar todos os usuários em uma única requisição, ou seja, a URL deve receber o <span class="text-blue-600">id do usuário</span> como um parâmetro para que a requisição retorne algo. <span class="text-blue-600">Ex: login/2</span>. 
+                    </p>
+
+                    <!-- URL de entrada // usuários -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                URL de entrada:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                            <span class="font text-base">
+                                http://localhost/api/routers/login.php/2
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- URL de saida // usuários -->
+                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Saída:
+                            </span>
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b mb-">
+                            <pre class="font text-base">
+<code>
+    {
+        "id": "2",
+        "nome": "Nara",
+        "usuario": "silvahlipe@gmail.com",
+        "senha": "https:\/\/localhost:3000"
+    }
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 </body>
