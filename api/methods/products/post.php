@@ -8,7 +8,7 @@
         $estoque = mysqli_escape_string($conn, $data['estoque']);
         $imagem = mysqli_escape_string($conn, $data['imagem']);
 
-        if($data['table'] == 'produtos') {
+        if($data['tipo'] == 'produto') {
             $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$tipo', '$imagem', $valor, $estoque)";
         } else {
             $sql = "INSERT INTO adicionais VALUES (DEFAULT, '$nome', '$tipo', '$imagem', '$valor','$estoque')";

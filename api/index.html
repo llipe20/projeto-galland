@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/function.js" defer></script>
     <style>
         .bg {
             background-color: #0F172A;
@@ -375,18 +374,61 @@
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
                             <span class="text-lg text-white">
-                                URL de entrada:
+                                Entrada:
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base">
-                                http://localhost/api/routers/pedidos.php
-                            </span>
+                            <pre class="font text-base">
+<code>
+async function newRequest() {
+    const data = 
+        {
+            "id_login":"Int", // id do usuário
+            "pedido_valor": "Float", // valor da compra
+            "pedido_pagamento": "String", // forma de pagamento
+            "pedido_situacao": "String", 
+            "pedido_obs": "String", 
+            "pedido_delivery": "Boolean", // delivery ou retirada,
+            "cliente_id": "Int", // id do cliente
+            "cliente_nome": "String",  
+            "cliente_email": "String",
+            "cliente_fone": "String",
+            "cliente_rua": "String",
+            "cliente_bairro": "String",
+            "cliente_casa": "String",
+            "cliente_referencia": "String",
+            "produtos": [
+                {
+                    "produto_id": "Int", // id do produto que está consumindo
+                    "quantidade_produto": "Int"
+                }
+            ],
+            "adicionais": [
+                {
+                    "adicional_id": "Int", // id do adicional que está consumindo
+                    "quantidade_adicional": "Int",
+                }
+            ]
+        }
+
+        const url = 'http://localhost/api/routers/pedidos.php'
+
+        req = await fetch(url, {
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+    })
+        const res = await req.json()
+        console.log(res)
+}
+</code>
+                            </pre>
                         </div>
                     </div>
 
                     <p class="w-4/5 pt-2 pb-2">
-                        Caso queira um pedido específico, basta passar o <span class="text-blue-600">id do pedido</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: pedidos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
+                        Neste exemplo de entrada, usei uma função assíncrona para fazer a requisição POST. Os dados de entrada são estes da variável <span class="text-blue-600">data</span>. Vale lembrar que a rota é a mesma, o que muda é a penas o method, que deve ser configurado para <span class="text-blue-600">POST</span>.
                     </p>
 
                     <!-- URL de saida // pedido -->
@@ -397,62 +439,7 @@
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
-                           <pre class="font text-base">
-<code >
-    {
-        "pedido_id": "1",
-        "pedido_valor": "50.00",
-        "pedido_pagamento": "PIX",
-        "pedido_situacao": "Finalizado",
-        "pedido_obs": "",
-        "pedido_delivery": "0",
-        "cliente_id": "1",
-        "cliente_nome": "Felipe",
-        "cliente_email": "fs2284511@mail.com",
-        "cliente_fone": "(99) 98447-0567",
-        "cliente_rua": "Vinte e um de abril",
-        "cliente_bairro": "Volta Redonda",
-        "cliente_casa": "1279",
-        "cliente_referencia": "Prox a escoila",
-        "produtos": [
-            {
-                "produto_id": "1",
-                "produto_nome": "Açai 200ml",
-                "produto_tipo": "Açais",
-                "quantidade_produto": "1",
-                "produto_imagem": "null",
-                "produto_valor": "12.00"
-            },
-            {
-                "produto_id": "1",
-                "produto_nome": "Açai 200ml",
-                "produto_tipo": "Açais",
-                "quantidade_produto": "1",
-                "produto_imagem": "null",
-                "produto_valor": "12.00"
-            }
-        ],
-        "adicionais": [
-            {
-                "adicional_id": "1",
-                "adicional_nome": "chocolate",
-                "adicional_tipo": "Adicionais",
-                "quantidade_adicional": "1",
-                "adicional_imagem": "null",
-                "adicional_valor": "2.00"
-            },
-            {
-                "adicional_id": "2",
-                "adicional_nome": "banana",
-                "adicional_tipo": "Adicionais",
-                "quantidade_adicional": "2",
-                "adicional_imagem": "null",
-                "adicional_valor": "2.00"
-            }
-        ]
-    }
-</code>
-                            </pre>
+                           
                         </div>
                     </div>
                 </div>
@@ -467,18 +454,40 @@
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
                             <span class="text-lg text-white">
-                                URL de entrada:
+                                Entrada:
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base">
-                                http://localhost/api/routers/produtos.php
-                            </span>
+                            <pre class="font text-base">
+<code>
+async function newProdut() {
+    const data = 
+        {
+            "nome" : "String",
+            "tipo" : "String", // 'produto' ou 'adicional'
+            "imagem" : "String",
+            "valor" : "Float", // valor da unidade
+            "estoque" : "Int"
+        }
+
+        const url = 'http://localhost/api/routers/produtos.php'
+
+        req = await fetch(url, {
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+    })
+        const res = await req.json()
+        console.log(res)
+}
+</code>
+                            </pre>
                         </div>
                     </div>
 
                     <p class="w-4/5 pt-2 pb-2">
-                        Caso queira encontrar um produto específico, basta passar o <span class="text-blue-600">id do produto</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: produtos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
+                        Neste exemplo de entrada, usei uma função assíncrona para fazer a requisição POST. Os dados de entrada são estes da variável <span class="text-blue-600">data</span>. Vale lembrar que a rota é a mesma, o que muda é a penas o method, que deve ser configurado para <span class="text-blue-600">POST</span>.
                     </p>
 
                     <!-- URL de saida // produtos -->
@@ -490,45 +499,9 @@
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
                             <pre class="font text-base">
-<code >
-    {
-        "produtos": [
-            {
-                "id": "1",
-                "nome": "Açai 200ml",
-                "tipo": "Açais",
-                "imagem": "null",
-                "valor": "12.00",
-                "estoque": "22"
-            },
-            {
-                "id": "2",
-                "nome": "Açai 350ml",
-                "tipo": "Açais",
-                "imagem": "null",
-                "valor": "15.00",
-                "estoque": "33"
-            }
-        ],
-        "adicionais": [
-            {
-                "id": "1",
-                "nome": "chocolate",
-                "tipo": "Adicionais",
-                "imagem": "null",
-                "valor": "2.00",
-                "estoque": "20"
-            },
-            {
-                "id": "2",
-                "nome": "banana",
-                "tipo": "Adicionais",
-                "imagem": "null",
-                "valor": "2.00",
-                "estoque": "40"
-            }
-        ]
-    }
+<code>
+    {message: 'Produto adiconado com sucesso.'} or
+    {error: 'Erro ao adicionar o produto: exibição do erro}
 </code>
                             </pre>
                         </div>
@@ -537,12 +510,12 @@
 
                 <!-- get usuários -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600">
+                    <h3 class="text-2xl text-blue-600" onclick="newRequest()">
                         Usuários
                     </h3>
                     
                     <p class="w-4/5 pb-2">
-                        Vale ressaltar que não é possivel consultar todos os usuários em uma única requisição, ou seja, a URL deve receber o <span class="text-blue-600">id do usuário</span> como um parâmetro para que a requisição retorne algo. <span class="text-blue-600">Ex: login/2</span>. 
+                        Neste exemplo de entrada, usei uma função assíncrona para fazer a requisição POST. Os dados de entrada são estes da variável <span class="text-blue-600">data</span>. Vale lembrar que a rota é a mesma, o que muda é a penas o method, que deve ser configurado para <span class="text-blue-600">POST</span>.
                     </p>
 
                     <!-- URL de entrada // usuários -->
@@ -550,13 +523,33 @@
 
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
                             <span class="text-lg text-white">
-                                URL de entrada:
+                                Entrada:
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base">
-                                http://localhost/api/routers/login.php/2
-                            </span>
+                            <pre class="font text-base">
+<code>
+async function newUser() {
+    const data = 
+        {
+            "nome" : "String",
+            "email" : "String",
+            "senha" : "String"
+        }
+
+        const url = 'http://localhost/api/routers/login.php'
+
+        req = await fetch(url, {
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+    })
+        const res = await req.json()
+        console.log(res)
+}
+</code>
+                            </pre>
                         </div>
                     </div>
 
@@ -570,12 +563,8 @@
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b mb-">
                             <pre class="font text-base">
 <code>
-    {
-        "id": "2",
-        "nome": "Nara",
-        "usuario": "silvahlipe@gmail.com",
-        "senha": "https:\/\/localhost:3000"
-    }
+    {message: 'Usuario criado com sucesso.'} or
+    {error: 'Erro ao adicionar o usuário: exibição do erro}
 </code>
                             </pre>
                         </div>
@@ -584,5 +573,50 @@
             </section>
         </main>
     </div>
+    <script src="js/function.js"></script>
+    <script>
+async function newRequest() {
+    const data = 
+        {
+            "id_login":2, // id do usuário
+            "pedido_valor": 22, // valor da compra
+            "pedido_pagamento": "String", // forma de pagamento
+            "pedido_situacao": "String", 
+            "pedido_obs": "String", 
+            "pedido_delivery": true, // delivery ou retirada,
+            "cliente_id": "", // id do cliente
+            "cliente_nome": "String",  
+            "cliente_email": "String",
+            "cliente_fone": "String",
+            "cliente_rua": "String",
+            "cliente_bairro": "String",
+            "cliente_casa": "String",
+            "cliente_referencia": "String",
+            "produtos": [
+                {
+                    "produto_id": 1, // id do produto que está consumindo
+                    "quantidade_produto": 2
+                }
+            ],
+            "adicionais": [
+                {
+                    "adicional_id": 3, // id do adicional que está consumindo
+                    "quantidade_adicional": 5,
+                }
+            ]
+        }
+
+        const url = 'http://localhost/api/routers/pedidos.php'
+
+        req = await fetch(url, {
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+    })
+        const res = await req.json()
+        console.log(res)
+}
+    </script>
 </body>
 </html>

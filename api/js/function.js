@@ -3,45 +3,33 @@ function toji(id,data) {
     element.textContent = data
 }
 
-async function mahoraga() {
+async function newRequest() {
     const data = 
         {
-            "id_login":"2",
-            "pedido_valor": 20,
-            "pedido_pagamento": "debito",
-            "pedido_situacao": "Finalizado",
-            "pedido_obs": "sem cebola",
-            "pedido_delivery": false,
-            "cliente_id": "",
-            "cliente_nome": "Gih maia",
-            "cliente_email": "fs2284511@mail.com",
-            "cliente_fone": "(99) 98447-0567",
-            "cliente_rua": "Vinte e um de abril",
-            "cliente_bairro": "Volta Redonda",
-            "cliente_casa": "1279",
-            "cliente_referencia": "Prox a escoila",
+            "id_login":"Int", // id do usuário
+            "pedido_valor": "Float", // valor da compra
+            "pedido_pagamento": "String", // forma de pagamento
+            "pedido_situacao": "String", 
+            "pedido_obs": "String", 
+            "pedido_delivery": "Boolean", // delivery ou retirada,
+            "cliente_id": "Int", // id do cliente
+            "cliente_nome": "String",  
+            "cliente_email": "String",
+            "cliente_fone": "String",
+            "cliente_rua": "String",
+            "cliente_bairro": "String",
+            "cliente_casa": "String",
+            "cliente_referencia": "String",
             "produtos": [
                 {
-                    "produto_id": "1",
-                    "quantidade_produto": "1"
-                },
-                {
-                    "produto_id": "2",
-                    "quantidade_produto": "4"
-                },
-                {
-                    "produto_id": "3",
-                    "quantidade_produto": "2"
+                    "produto_id": "Int", // id do produto que está consumindo
+                    "quantidade_produto": "Int"
                 }
             ],
             "adicionais": [
                 {
-                    "adicional_id": "1",
-                    "quantidade_adicional": "1",
-                },
-                {
-                    "adicional_id": "2",
-                    "quantidade_adicional": "2",
+                    "adicional_id": "Int", // id do adicional que está consumindo
+                    "quantidade_adicional": "Int",
                 }
             ]
         }
@@ -49,12 +37,54 @@ async function mahoraga() {
         const url = 'http://localhost/api/routers/pedidos.php'
 
         req = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
     })
-
-    console.log(req)
+        const res = await req.json()
+        console.log(res)
 }
+
+async function newUser() {
+    const data = 
+        {
+            "nome" : "String",
+            "email" : "String",
+            "senha" : "String"
+        }
+
+        const url = 'http://localhost/api/routers/login.php'
+
+        req = await fetch(url, {
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+    })
+        const res = await req.json()
+        console.log(res)
+}
+
+async function newProdut() {
+    const data = 
+        {
+            "nome" : "String",
+            "tipo" : "produto", // 'produto' ou 'adicional'
+            "imagem" : "String",
+            "valor" : 10, // valor da unidade
+            "estoque" : 66
+        }
+
+        const url = 'http://localhost/api/routers/produtos.php'
+
+        req = await fetch(url, {
+            method: 'POST',
+            headers: 
+            { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+    })
+        const res = await req.json()
+        console.log(res)
+}
+
