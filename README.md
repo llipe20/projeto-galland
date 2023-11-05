@@ -1,2 +1,2 @@
 # projeto-galland
- Sistema de cardáoio online para uma açaiteria
+ mini Api para um sistema de cardáoio online 
