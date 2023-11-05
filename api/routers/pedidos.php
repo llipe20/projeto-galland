@@ -16,6 +16,7 @@
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+    $method = 'GET';
     // resposta em relação ao método chamado
     switch($method) {
         case 'GET':
