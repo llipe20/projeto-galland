@@ -149,13 +149,20 @@
 
                     <!-- URL de entrada // pedido -->
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
-                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
                             <span class="text-lg text-white">
                                 URL de entrada:
                             </span>
+
+                            <span id="span-get-pedido">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white" onclick="copy('get-pedido', 'span-get-pedido', event)">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
+                                </svg>   
+                            </span>
+                            
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base">
+                            <span class="font text-base" id="get-pedido">
                                 http://localhost/api/routers/pedidos.php
                             </span>
                         </div>
@@ -241,13 +248,20 @@
 
                     <!-- URL de entrada // produtos -->
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
-                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
                             <span class="text-lg text-white">
                                 URL de entrada:
                             </span>
+
+                            <span id="span-get-produto">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white" onclick="copy('get-produto', 'span-get-produto', event)">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
+                                </svg>  
+                            </span>
+                             
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base">
+                            <span class="font text-base" id="get-produto">
                                 http://localhost/api/routers/produtos.php
                             </span>
                         </div>
@@ -324,13 +338,20 @@
                     <!-- URL de entrada // usuários -->
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
 
-                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
                             <span class="text-lg text-white">
                                 URL de entrada:
                             </span>
+
+                            <span id="span-get-user">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white" onclick="copy('get-user', 'span-get-user', event)">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
+                                </svg>   
+                            </span>
+                            
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base">
+                            <span class="font text-base" id="get-user">
                                 http://localhost/api/routers/login.php/2
                             </span>
                         </div>
@@ -372,13 +393,19 @@
 
                     <!-- URL de entrada // pedido -->
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
-                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
                             <span class="text-lg text-white">
                                 Entrada:
                             </span>
+
+                            <span id="span-post-pedido">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white" onclick="copy('post-pedido','span-post-pedido', event)">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
+                                </svg> 
+                            </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <pre class="font text-base">
+                            <pre class="font text-base" id="post-pedido">
 <code>
 async function newRequest() {
     const data = 
@@ -439,7 +466,12 @@ async function newRequest() {
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
-                           
+                            <pre class="font text-base">
+<code>
+    {message: 'Pedido adiconado com sucesso.'} or
+    {error: 'Erro ao adicionar o pedido: exibição do erro}
+</code>
+                            </pre>
                         </div>
                     </div>
                 </div>
@@ -452,13 +484,19 @@ async function newRequest() {
 
                     <!-- URL de entrada // produtos -->
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
-                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
                             <span class="text-lg text-white">
                                 Entrada:
                             </span>
+
+                            <span id="span-post-produto">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white" onclick="copy('post-produto', 'span-post-produto', event)">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
+                                </svg>  
+                            </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <pre class="font text-base">
+                            <pre class="font text-base" id="post-produto">
 <code>
 async function newProdut() {
     const data = 
@@ -510,7 +548,7 @@ async function newProdut() {
 
                 <!-- get usuários -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600" onclick="newRequest()">
+                    <h3 class="text-2xl text-blue-600" onclick="copy('usuario')">
                         Usuários
                     </h3>
                     
@@ -521,13 +559,20 @@ async function newProdut() {
                     <!-- URL de entrada // usuários -->
                     <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
 
-                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
                             <span class="text-lg text-white">
                                 Entrada:
                             </span>
+
+                            <span  id="span-post-user">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white" onclick="copy('post-user', 'span-post-user', event)">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
+                                </svg> 
+                            </span>
+                            
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <pre class="font text-base">
+                            <pre class="font text-base" id="post-user">
 <code>
 async function newUser() {
     const data = 
@@ -573,50 +618,6 @@ async function newUser() {
             </section>
         </main>
     </div>
-    <script src="js/function.js"></script>
-    <script>
-async function newRequest() {
-    const data = 
-        {
-            "id_login":2, // id do usuário
-            "pedido_valor": 22, // valor da compra
-            "pedido_pagamento": "String", // forma de pagamento
-            "pedido_situacao": "String", 
-            "pedido_obs": "String", 
-            "pedido_delivery": true, // delivery ou retirada,
-            "cliente_id": "", // id do cliente
-            "cliente_nome": "String",  
-            "cliente_email": "String",
-            "cliente_fone": "String",
-            "cliente_rua": "String",
-            "cliente_bairro": "String",
-            "cliente_casa": "String",
-            "cliente_referencia": "String",
-            "produtos": [
-                {
-                    "produto_id": 1, // id do produto que está consumindo
-                    "quantidade_produto": 2
-                }
-            ],
-            "adicionais": [
-                {
-                    "adicional_id": 3, // id do adicional que está consumindo
-                    "quantidade_adicional": 5,
-                }
-            ]
-        }
-
-        const url = 'http://localhost/api/routers/pedidos.php'
-
-        req = await fetch(url, {
-            method: 'POST',
-            headers: 
-            { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-    })
-        const res = await req.json()
-        console.log(res)
-}
-    </script>
+    <script src="function.js"></script>
 </body>
 </html>

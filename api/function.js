@@ -1,6 +1,26 @@
-function toji(id,data) {
-    const element = document.getElementById(`${id}`)
-    element.textContent = data
+function copy (idA, idB, e) {
+    const conteudo = document.getElementById(`${idA}`)  // conteúdo a ser copiado
+    const pai = document.getElementById(`${idB}`)  // box pai
+    const textarea = document.createElement('textarea');
+    const tag = e.target  // elemento de disparo
+
+    textarea.value = conteudo.innerText;
+    document.body.appendChild(textarea);
+
+    // Seleciona o texto na área de texto temporário
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    tag.classList.add("w-0", "h-0")
+    pai.innerText = 'copiado'
+    pai.classList.add("text-base")
+
+    setInterval(() => {
+        tag.classList.remove("w-0", "h-0")
+        tag.classList.add("flex")
+        pai.innerText = ''
+    }, 3000)
 }
 
 async function newRequest() {
@@ -12,7 +32,7 @@ async function newRequest() {
             "pedido_situacao": "String", 
             "pedido_obs": "String", 
             "pedido_delivery": "Boolean", // delivery ou retirada,
-            "cliente_id": "Int", // id do cliente
+            "cliente_id": 2, // id do cliente
             "cliente_nome": "String",  
             "cliente_email": "String",
             "cliente_fone": "String",
@@ -34,6 +54,7 @@ async function newRequest() {
             ]
         }
 
+        
         const url = 'http://localhost/api/routers/pedidos.php'
 
         req = await fetch(url, {
@@ -44,6 +65,7 @@ async function newRequest() {
     })
         const res = await req.json()
         console.log(res)
+
 }
 
 async function newUser() {
