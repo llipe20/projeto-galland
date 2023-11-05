@@ -1,6 +1,6 @@
 function copy (idA, idB, e) {
     const conteudo = document.getElementById(`${idA}`)  // conteúdo a ser copiado
-    const pai = document.getElementById(`${idB}`)  // box pai
+    const text = document.getElementById(`${idB}`)  
     const textarea = document.createElement('textarea');
     const tag = e.target  // elemento de disparo
 
@@ -12,14 +12,12 @@ function copy (idA, idB, e) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 
-    tag.classList.add("w-0", "h-0")
-    pai.innerText = 'copiado'
-    pai.classList.add("text-base")
-
+    text.classList.remove("hidden")
+    tag.classList.add("hidden")
+   
     setInterval(() => {
-        tag.classList.remove("w-0", "h-0")
-        tag.classList.add("flex")
-        pai.innerText = ''
+        text.classList.add("hidden")
+        tag.classList.remove("hidden")
     }, 3000)
 }
 
