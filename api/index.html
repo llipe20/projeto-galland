@@ -7,8 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         .bg {
             background-color: #0F172A;
         }
@@ -40,11 +49,31 @@
     </script>
 </head>
 <body class="overflow-x-hidden">
-    <div class="flex w-screen min-h-screen bg text-slate-400">
-        <!-- Barra de navegação lateral -->
-        <section class="flex flex-col justify-between items-center gap-2.5 w-1/5 h-screen border-r border-slate-700 fixed">
+    <div class="flex flex-col lg:flex-row w-screen min-h-screen bg text-slate-400">
+        <!-- Barra de navegação horizontal -->
+        <section class="flex justify-between items-center w-screen h-16 bg-blue-900 lg:hidden text-white text-xl p-6">
             <!-- Logo -->
-            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-2xl pt-8 text-blue-600">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                    stroke-width="1.5" 
+                    stroke="currentColor" 
+                    class="w-6 h-6"
+                >
+                    <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" 
+                    />
+                </svg>
+                <span>
+                    Projeto Galland
+                </span>                
+        </section>
+
+        <!-- Barra de navegação lateral -->
+        <section class="hidden lg:flex flex-col justify-between items-center gap-2.5 w-1/2 lg:w-1/5 h-screen border-r border-slate-700 fixed bg">
+            <!-- Logo -->
+            <div class="flex flex-row justify-center items-center gap-2 w-full h-24 text-xl lg:text-2xl pt-8 text-blue-600">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
@@ -54,23 +83,23 @@
             </div>
 
              <!-- Links iniciais -->
-            <nav class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
+            <nav class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4 text-base lg:text-lg">
                 <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
   
-                        <a href="#intro" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#intro" class="text-left w-full hover:border-b-2 border-blue-900">
                             Introdução
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#finalidade" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#finalidade" class="text-left w-full hover:border-b-2 border-blue-900">
                             Finalidade
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#test-get" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#test-get" class="text-left w-full hover:border-b-2 border-blue-900">
                             Teste GET
                         </a>
                     </div>
@@ -79,31 +108,31 @@
                  <!-- Methods links -->
                 <div class="flex flex-col justify-center items-center gap-2.5 w-full h-3/4">
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#get" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#get" class="text-left w-full hover:border-b-2 border-blue-900">
                             Method Get
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#post" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#post" class="text-left w-full hover:border-b-2 border-blue-900">
                             Method Post
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#put" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#put" class="text-left w-full hover:border-b-2 border-blue-900">
                             Method Put
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#patch" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#patch" class="text-left w-full hover:border-b-2 border-blue-900">
                             Method Patch
                         </a>
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#delete" class="text-lg text-left w-full hover:border-b border-slate-700">
+                        <a href="#delete" class="text-left w-full hover:border-b-2 border-blue-900">
                             Method Delete
                         </a>
                     </div>
@@ -111,296 +140,310 @@
             </nav>
 
              <!-- Contato link -->
-            <nav class="flex flex-row justify-center items-center gap-2 5 w-full h-24">
-                <a href="https://instagram.com/___llpe" target="_blank" class="hover:text-slate-300">
-                    insta
-                </a>
+             <div class="flex flex-col justify-center items-center gap-3 w-full h-40">
+                <nav class="flex flex-row justify-center items-center gap-3 w-full">
+                    <a href="https://www.linkedin.com/in/felipe-silva--/" class="flex justiy-center items-center gap-2 hover:text-blue-600" target="_blank">
+                        <i class="fi fi-brands-linkedin"></i>   
+                    </a>
+                    <a href="https://instagram.com/___llpe" target="_blank" class="hover:text-blue-600">
+                        <i class="fi fi-brands-instagram"></i>
+                    </a>
 
-                <a href="https://github.com/llipe20" target="_blank" class="hover:text-slate-300">
-                    github
-                </a>
-            </nav>
+                    <a href="https://github.com/llipe20" target="_blank" class="hover:text-blue-600">
+                        <i class="fi fi-brands-github"></i>
+                    </a>
+                    <a href="https://wa.me/qr/O43EG6NVZ3QCE1" class="flex justiy-center items-center gap-2 hover:text-blue-600" target="_blank">
+                        <i class="fi fi-brands-whatsapp"></i>
+                    </a>
+                </nav>
+                <!-- créditos e copy -->
+                <div class="flex justify-center itmes-center w-3/4 text-sm">
+                    <p class="text-center pr-2 pl-2">
+                        &copy; 2023 
+                        <a href="https://github.com/llipe20/projeto-galland" target="_blank">
+                            projeto-galland
+                        </a> 
+                        - Criado e desenvolvido por 
+                        <a href="https://portfolio-felipe-gamma.vercel.app/" class="text-blue-600 cursor-pointer" target="_blank">
+                            llpe
+                        </a>
+                    </p>
+                </div>
+             </div>
         </section>
 
          <!-- Conteúdo principal -->
-        <main class="flex flex-col justify-start items-center gap-2.5 p-8 w-4/5 ml-80">
-            <section id="intro" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
-                <h2 class="text-4xl text-white">
+        <main class="flex flex-col justify-start items-center gap-0 lg:gap-2.5 lg:p-8 w-screen lg:w-4/5 lg:ml-80 bg text-base lg:text-lg">
+            <!-- INTRO -->
+            <section id="intro" class="hidden lg:flex flex-col justify-center lg:justify-evenly items-center lg:items-start gap-4 w-full p-4">
+                <h2 class="text-2xl lg:text-4xl text-white">
                    Introdução 
                 </h2>
 
-                <p class="w-4/5">
+                <p class="w-full lg:w-4/5">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolores ad pariatur molestiae quibusdam! Commodi, sit at saepe fugit, fuga aut natus inventore consequatur laborum cum blanditiis id dolorem illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora placeat sapiente mollitia fugit, laborum quos quo doloremque consequuntur esse, molestias minima aut voluptate autem, ducimus velit distinctio recusandae reprehenderit. Quibusdam!
                 </p>
             </section>
 
-            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
-                <h2 class="text-4xl text-white">
+            <!-- FINALIDADE -->
+            <section id="finalidade" class="flex flex-col justify-center lg:justify-evenly items-center lg:items-start gap-4 w-full p-6 text-start">
+                <h2 class="text-2xl lg:text-4xl text-white w-full">
                    Finalidade 
                 </h2>
 
-                <p class="w-4/5">
+                <p class="w-full lg:w-4/5">
                     O projeto consiste em desenvolver uma mini API para fazer a ponte entre um banco de dados e o front end de uma aplicação pessoal, um sistema online de pedidos/cardápiio. Ou seja, a api servirá apenas para essa aplicação, a menos que queira usar pra testar mesmo.
                 </p>
 
-                <p class="w-4/5">
+                <p class="w-full lg:w-4/5">
                     A aplicação especifica, é a construção de um cardápio online para uma sorveteria, onde pretendo usar esta API para coletar e adicionar os dados de clientes, pedidos e produtos no banco de dados, trazendo mais dinamismo, facilitando o trabalho do desenvolvedor, no caso eu.
                 </p>
             </section>
 
-            <section id="finalidade" class="flex flex-col justify-evenly items-start gap-4 w-full p-4 text-lg">
-                <h2 class="text-4xl text-white">
+            <!-- COMO USAR -->
+            <section id="finalidade" class="flex flex-col justify-center lg:justify-evenly items-center lg:items-start gap-4 w-full p-6 text-start">
+                <h2 class="text-2xl lg:text-4xl text-white w-full">
                    Modo de usar 
                 </h2>
 
-                <p class="w-4/5">
+                <p class="w-full lg:w-4/5">
                    Como havia anteriormente, esta API servirá especificamente para uma única aplicação. Por isso, não contém informações relevantes para uso casual e para outros projetos, como a API de filmes, satélites e etc... Mas, caso queira testar e tals, é bem simples. Basta colocar a url da API - <span class="text-blue-600">localhost/api/routers/ ... nome da rota</span>, a aplicação possui três rotas, são elas: pedidos, produtos e login- na sua requisição e configurar os método de envio, cabeçalhos e etc... 
                 </p>
             </section>
 
-            <section id="get" class="flex flex-col justify-evenly items-start gap-10 w-full p-4 text-lg">
-                <h2 class="text-4xl text-white">
+            <!-- Requisições GET -->
+            <section id="get" class="flex flex-col justify-center lg:justify-evenly items-center lg:items-start gap-5 lg:gap-10 w-full p-6 text-start">
+                <h2 class="text-2xl lg:text-4xl text-white w-full">
                    Requisições GET
                 </h2>
 
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600">
+                    <h3 class="text-xl lg:text-2xl text-blue-600">
                         Pedidos
                     </h3>
 
                     <!-- URL de entrada // pedido -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 URL de entrada:
                             </span>
 
                             <span onclick="copy('get-pedido','span-get-pedido', event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 lg:w-6 lg:h-6 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
                                 </svg>   
                             </span>
                             
-                            <span id="span-get-pedido" class="hidden text-base">
+                            <span id="span-get-pedido" class="hidden text-sm lg:text-base">
                                 copiado
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base" id="get-pedido">
+                            <span class="font text-sm lg:text-base" id="get-pedido">
                                 http://localhost/api/routers/pedidos.php
                             </span>
                         </div>
                     </div>
 
-                    <p class="w-4/5 pt-2 pb-2">
+                    <p class="w-ful lg:w-4/5 pt-2 pb-2">
                         Caso queira os pedidos de um cliente específico, basta passar o <span class="text-blue-600">id do cliente</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: pedidos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
                     </p>
 
                     <!-- URL de saida // pedido -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
                             <span class="text-lg text-white">
                                 Saída:
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
-                           <pre class="font text-base">
-<code >
-    {
-        "pedido_id": Int,
-        "pedido_valor": Float,
-        "pedido_pagamento": String,
-        "pedido_situacao": String,
-        "pedido_obs": String,
-        "pedido_delivery": Boolean,
-        "cliente_id": Int,
-        "cliente_nome": String,
-        "cliente_email": String,
-        "cliente_fone": String,
-        "cliente_rua": String,
-        "cliente_bairro": String,
-        "cliente_casa": String,
-        "cliente_referencia": String,
-        "produtos": [
-            {
-                "produto_id": Int,
-                "produto_nome": String,
-                "produto_tipo": String,
-                "quantidade_produto": Int,
-                "produto_imagem": URL,
-                "produto_valor": Float
-            }
-        ],
-        "adicionais": [
-            {
-                "adicional_id": Int,
-                "adicional_nome": String,
-                "adicional_tipo": String,
-                "quantidade_adicional": Int,
-                "adicional_imagem": URL,
-                "adicional_valor": Float
-            }
-        ]
-    }
-</code>
-                            </pre>
+                        <div class="flex flex-col justify-center items-start w-full h-auto bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base"><code >{
+    "pedido_id": Int,
+    "pedido_valor": Float,
+    "pedido_pagamento": String,
+    "pedido_situacao": String,
+    "pedido_obs": String,
+    "pedido_delivery": Boolean,
+    "cliente_id": Int,
+    "cliente_nome": String,
+    "cliente_email": String,
+    "cliente_fone": String,
+    "cliente_rua": String,
+    "cliente_bairro": String,
+    "cliente_casa": String,
+    "cliente_referencia": String,
+    "produtos": [
+        {
+            "produto_id": Int,
+            "produto_nome": String,
+            "produto_tipo": String,
+            "quantidade_produto": Int,
+            "produto_imagem": URL,
+            "produto_valor": Float
+        }
+    ],
+    "adicionais": [
+        {
+            "adicional_id": Int,
+            "adicional_nome": String,
+            "adicional_tipo": String,
+            "quantidade_adicional": Int,
+            "adicional_imagem": URL,
+            "adicional_valor": Float
+        }
+    ]
+}
+</code></pre>
                         </div>
                     </div>
                 </div>
                 
                 <!-- get produtos -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600">
+                    <h3 class="text-xl lg:text-2xl text-blue-600">
                         Produtos
                     </h3>
 
                     <!-- URL de entrada // produtos -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 URL de entrada:
                             </span>
 
                             <span onclick="copy('get-produto','span-get-produto', event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
                                 </svg>   
                             </span>
                             
-                            <span id="span-get-produto" class="hidden text-base">
+                            <span id="span-get-produto" class="hidden text-sm lg:text-base">
                                 copiado
                             </span>
                              
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base" id="get-produto">
+                            <span class="font text-sm lg:text-base" id="get-produto">
                                 http://localhost/api/routers/produtos.php
                             </span>
                         </div>
                     </div>
 
-                    <p class="w-4/5 pt-2 pb-2">
+                    <p class="w-full lg:w-4/5 pt-2 pb-2">
                         Caso queira encontrar um produto específico, basta passar o <span class="text-blue-600">id do produto</span> como um parâmetro no final da URL. <span class="text-blue-600">Ex: produtos/2</span>. Assim, a requisição será direcionada apenas um único regristo.
                     </p>
 
                     <!-- URL de saida // produtos -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Saída:
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
-                            <pre class="font text-base">
-<code >
-    {
-        "produtos": [
-            {
-                "id": Int,
-                "nome": String,
-                "tipo": String,
-                "imagem": URL,
-                "valor": Float,
-                "estoque": Int
+                        <div class="flex flex-col justify-center items-start w-full h-auto bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base"><code >{
+    "produtos": [
+        {
+            "id": Int,
+            "nome": String,
+            "tipo": String,
+            "imagem": URL,
+            "valor": Float,
+            "estoque": Int
+        },
+        {
+            "id": Int,
+            "nome": String,
+            "tipo": String,
+            "imagem": URL,
+            "valor": Float,
+            "estoque": Int
+        }
+    ],
+    "adicionais": [
+        {
+            "id": Int,
+            "nome": String,
+            "tipo": String,
+            "imagem": URL,
+            "valor": Float,
+            "estoque": Int
             },
-            {
-                "id": Int,
-                "nome": String,
-                "tipo": String,
-                "imagem": URL,
-                "valor": Float,
-                "estoque": Int
-            }
-        ],
-        "adicionais": [
-            {
-                "id": Int,
-                "nome": String,
-                "tipo": String,
-                "imagem": URL,
-                "valor": Float,
-                "estoque": Int
-            },
-            {
-                "id": Int,
-                "nome": String,
-                "tipo": String,
-                "imagem": URL,
-                "valor": Float,
-                "estoque": Int
-            }
-        ]
-    }
-</code>
-                            </pre>
+        {
+            "id": Int,
+            "nome": String,
+            "tipo": String,
+            "imagem": URL,
+            "valor": Float,
+            "estoque": Int
+        }
+    ]
+}</code></pre>
                         </div>
                     </div>
                 </div>
 
                 <!-- get usuários -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600">
+                    <h3 class="text-xl lg:text-2xl text-blue-600">
                         Usuários
                     </h3>
                     
-                    <p class="w-4/5 pb-2">
+                    <p class="w-full lg:w-4/5 pb-2">
                         Vale ressaltar que não é possivel consultar todos os usuários em uma única requisição, ou seja, a URL deve receber o <span class="text-blue-600">id do usuário</span> como um parâmetro para que a requisição retorne algo. <span class="text-blue-600">Ex: login/2</span>. 
                     </p>
 
                     <!-- URL de entrada // usuários -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
 
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 URL de entrada:
                             </span>
 
                             <span onclick="copy('get-user','span-get-user', event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
                                 </svg>   
                             </span>
                             
-                            <span id="span-get-user" class="hidden text-base">
+                            <span id="span-get-user" class="hidden text-sm lg:text-base">
                                 copiado
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <span class="font text-base" id="get-user">
+                            <span class="font text-sm lg:text-base" id="get-user">
                                 http://localhost/api/routers/login.php/2
                             </span>
                         </div>
                     </div>
 
                     <!-- URL de saida // usuários -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Saída:
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b mb-">
-                            <pre class="font text-base">
-<code>
-    {
-        "id": Int,
-        "nome": String
-        "usuario": String,
-        "senha": String
-    }
-</code>
-                            </pre>
+                        <div class="flex flex-col justify-center items-start w-full h-auto bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base"><code>{
+    "id": Int,
+    "nome": String
+    "usuario": String,
+    "senha": String
+}</code></pre>
                         </div>
                     </div>
                     <!-- TESTE DE API GET -->
-                    <h2 id="test-get" class="text-4xl text-white mt-5 mb-5">
+                    <h2 id="test-get" class="text-2xl lg:text-4xl text-white lg:mt-5 lg:mb-5 mt-2 mb-2">
                         Teste de API GET
                     </h2>
                     <!-- entrada endpopint -->
-                     <form id="form" class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                     <form id="form" class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
 
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 p-6 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Endpoint:
                             </span>
 
@@ -417,15 +460,14 @@
                                 id="input-test-get" 
                                 class="w-full h-full p-4 border-0 outline-0 bg-gray-800"
                                 placeholder="Cole o endpoint aqui"
-                                autofocus
                             >
                         </div>
                     </form>
                     
                     <!-- saida -->
-                    <div id="box-hidden" class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl hidden">
+                    <div id="box-hidden" class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl hidden">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Resultado:
                             </span>
                         </div>
@@ -437,25 +479,25 @@
             </section>
 
             <!-- Requisições POST -->
-            <section id="post" class="flex flex-col justify-evenly items-start gap-10 w-full p-4 text-lg">
-                <h2 class="text-4xl text-white">
+            <section id="post" class="flex flex-col justify-evenly items-start gap-5 lg:gap-10 w-full p-6 text-base lg:text-lg">
+                <h2 class="text-2xl lg:text-4xl text-white">
                    Requisições POST
                 </h2>
 
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600">
+                    <h3 class="text-xl lg:text-2xl text-blue-600">
                         Pedidos
                     </h3>
 
                     <!-- URL de entrada // pedido -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Entrada:
                             </span>
 
                             <span onclick="copy('post-pedido','span-post-pedido', event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 lg:w-6 lg:h-6 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
                                 </svg>   
                             </span>
@@ -464,93 +506,88 @@
                                 copiado
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <pre class="font text-base" id="post-pedido">
-<code>
-async function newRequest() {
-    const data = 
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base" id="post-pedido"><code>async function newRequest() {
+const data = 
+{
+    "id_login":"Int", // id do usuário
+    "pedido_valor": "Float", // valor da compra
+    "pedido_pagamento": "String",
+    "pedido_situacao": "String", 
+    "pedido_obs": "String", 
+    "pedido_delivery": "Boolean", // sim ou não,
+    "cliente_id": "Int", // id do cliente
+    "cliente_nome": "String",  
+    "cliente_email": "String",
+    "cliente_fone": "String",
+    "cliente_rua": "String",
+    "cliente_bairro": "String",
+    "cliente_casa": "String",
+    "cliente_referencia": "String",
+    "produtos": [
         {
-            "id_login":"Int", // id do usuário
-            "pedido_valor": "Float", // valor da compra
-            "pedido_pagamento": "String", // forma de pagamento
-            "pedido_situacao": "String", 
-            "pedido_obs": "String", 
-            "pedido_delivery": "Boolean", // delivery ou retirada,
-            "cliente_id": "Int", // id do cliente
-            "cliente_nome": "String",  
-            "cliente_email": "String",
-            "cliente_fone": "String",
-            "cliente_rua": "String",
-            "cliente_bairro": "String",
-            "cliente_casa": "String",
-            "cliente_referencia": "String",
-            "produtos": [
-                {
-                    "produto_id": "Int", // id do produto que está consumindo
-                    "quantidade_produto": "Int"
-                }
-            ],
-            "adicionais": [
-                {
-                    "adicional_id": "Int", // id do adicional que está consumindo
-                    "quantidade_adicional": "Int",
-                }
-            ]
+            "produto_id": "Int", // id do produto
+que está consumindo.
+            "quantidade_produto": "Int"
         }
-
-        const url = 'http://localhost/api/routers/pedidos.php'
-
-        req = await fetch(url, {
-            method: 'POST',
-            headers: 
-            { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-    })
-        const res = await req.json()
-        console.log(res)
+    ],
+    "adicionais": [
+        {
+            "adicional_id": "Int", // id do 
+adicional que está consumindo.
+            "quantidade_adicional": "Int",
+        }
+    ]
 }
-</code>
-                            </pre>
+
+const url = 'http://localhost/api/routers
+/pedidos.php'
+
+req = await fetch(url, {
+    method: 'POST',
+    headers: 
+    { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+})
+const res = await req.json()
+console.log(res)
+}</code></pre>
                         </div>
                     </div>
 
-                    <p class="w-4/5 pt-2 pb-2">
+                    <p class="w-full lg:w-4/5 pt-2 pb-2">
                         Neste exemplo de entrada, usei uma função assíncrona para fazer a requisição POST. Os dados de entrada são estes da variável <span class="text-blue-600">data</span>. Vale lembrar que a rota é a mesma, o que muda é a penas o method, que deve ser configurado para <span class="text-blue-600">POST</span>.
                     </p>
 
                     <!-- URL de saida // pedido -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Saída:
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
-                            <pre class="font text-base">
-<code>
-    {message: 'Pedido adiconado com sucesso.'} or
-    {error: 'Erro ao adicionar o pedido: exibição do erro}
-</code>
-                            </pre>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base"><code>{message: 'Pedido adiconado com sucesso.'} or
+{error: 'Erro: exibição do erro}</code></pre>
                         </div>
                     </div>
                 </div>
                 
                 <!-- get produtos -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600">
+                    <h3 class="text-xl text-2xl text-blue-600">
                         Produtos
                     </h3>
 
                     <!-- URL de entrada // produtos -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Entrada:
                             </span>
 
                             <span onclick="copy('post-produto','span-post-produto', event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
                                 </svg>   
                             </span>
@@ -559,77 +596,71 @@ async function newRequest() {
                                 copiado
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <pre class="font text-base" id="post-produto">
-<code>
-async function newProdut() {
-    const data = 
-        {
-            "nome" : "String",
-            "tipo" : "String", // 'produto' ou 'adicional'
-            "imagem" : "String",
-            "valor" : "Float", // valor da unidade
-            "estoque" : "Int"
-        }
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base" id="post-produto"><code>async function newProdut() {
+const data = 
+    {
+        "nome" : "String",
+        "tipo" : "String", // 'produto' ou 
+'adicional'
+        "imagem" : "String",
+        "valor" : "Float", // valor da unidade
+        "estoque" : "Int"
+    }
 
-        const url = 'http://localhost/api/routers/produtos.php'
+    const url = 'http://localhost/api/routers
+/produtos.php'
 
-        req = await fetch(url, {
-            method: 'POST',
-            headers: 
-            { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-    })
-        const res = await req.json()
-        console.log(res)
-}
-</code>
-                            </pre>
+    req = await fetch(url, {
+        method: 'POST',
+        headers: 
+        { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+})
+    const res = await req.json()
+    console.log(res)
+}</code></pre>
                         </div>
                     </div>
 
-                    <p class="w-4/5 pt-2 pb-2">
+                    <p class="w-full lg:w-4/5 pt-2 pb-2">
                         Neste exemplo de entrada, usei uma função assíncrona para fazer a requisição POST. Os dados de entrada são estes da variável <span class="text-blue-600">data</span>. Vale lembrar que a rota é a mesma, o que muda é a penas o method, que deve ser configurado para <span class="text-blue-600">POST</span>.
                     </p>
 
                     <!-- URL de saida // produtos -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Saída:
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b">
-                            <pre class="font text-base">
-<code>
-    {message: 'Produto adiconado com sucesso.'} or
-    {error: 'Erro ao adicionar o produto: exibição do erro}
-</code>
-                            </pre>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base"><code>{message: 'Produto adiconado com sucesso.'} or
+{error: 'Erro ao adicionar: exibição do erro}</code></pre>
                         </div>
                     </div>
                 </div>
 
                 <!-- get usuários -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
-                    <h3 class="text-2xl text-blue-600" onclick="copy('usuario')">
+                    <h3 class="text-xl text-2xl text-blue-600" onclick="copy('usuario')">
                         Usuários
                     </h3>
                     
-                    <p class="w-4/5 pb-2">
+                    <p class="w-full lg:w-4/5 pb-2">
                         Neste exemplo de entrada, usei uma função assíncrona para fazer a requisição POST. Os dados de entrada são estes da variável <span class="text-blue-600">data</span>. Vale lembrar que a rota é a mesma, o que muda é a penas o method, que deve ser configurado para <span class="text-blue-600">POST</span>.
                     </p>
 
                     <!-- URL de entrada // usuários -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
 
                         <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 pl-4 pr-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Entrada:
                             </span>
 
                             <span onclick="copy('post-user','span-post-user', event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/>
                                 </svg>   
                             </span>
@@ -638,52 +669,93 @@ async function newProdut() {
                                 copiado
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
-                            <pre class="font text-base" id="post-user">
-<code>
-async function newUser() {
-    const data = 
-        {
-            "nome" : "String",
-            "email" : "String",
-            "senha" : "String"
-        }
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base" id="post-user"><code>async function newUser() {
+const data = 
+    {
+        "nome" : "String",
+        "email" : "String",
+        "senha" : "String"
+    }
 
-        const url = 'http://localhost/api/routers/login.php'
+    const url = 'http://localhost/api/routers
+/login.php'
 
-        req = await fetch(url, {
-            method: 'POST',
-            headers: 
-            { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-    })
-        const res = await req.json()
-        console.log(res)
-}
-</code>
-                            </pre>
+    req = await fetch(url, {
+        method: 'POST',
+        headers: 
+        { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+})
+    const res = await req.json()
+    console.log(res)
+}</code></pre>
                         </div>
                     </div>
 
                     <!-- URL de saida // usuários -->
-                    <div class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+                    <div class="flex flex-col justify-between items-center w-full lg:w-4/5 h-auto rounded-xl">
                         <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
-                            <span class="text-lg text-white">
+                            <span class="text-base lg:text-lg text-white">
                                 Saída:
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b mb-">
-                            <pre class="font text-base">
-<code>
-    {message: 'Usuario criado com sucesso.'} or
-    {error: 'Erro ao adicionar o usuário: exibição do erro}
-</code>
-                            </pre>
+                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
+<pre class="font text-sm lg:text-base"><code>{message: 'Usuario criado com sucesso.'} or
+{error: 'Erro ao adicionar: exibição do erro}</code></pre>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+    
+        <footer id="footer" class="lg:hidden flex flex-col justify-center items-center gap-2 w-full h-auto p-5 bg-background-900 lg:mt-5 text-sm lg:text-base">
+            <!-- logo -->
+            <div class="flex justify-center items-center h-full w-full xl:text-2xl text-xl p-2 gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                    <span class="font-logo">
+                        Projeto Galland
+                    </span>
+            </div>
+            <!-- links de contato -->
+            <ul class="flex flex-wrap justify-center itmes-center gap-3 lg:gap-5 w-full pl-4 pr-4">
+                <li class="hover:text-blue-600">
+                    <a href="https://www.linkedin.com/in/felipe-silva--/" class="flex justiy-center items-center gap-2" target="_blank">
+                        <i class="fi fi-brands-linkedin"></i>   
+                    </a>
+                </li>
+                <li class="hover:text-blue-600">
+                    <a href="https://instagram.com/___llpe" class="flex justiy-center items-center gap-2" target="_blank">
+                        <i class="fi fi-brands-instagram"></i>
+                    </a>
+                </li>
+                <li class="hover:text-blue-600">
+                    <a href="https://github.com/llipe20" class="flex justiy-center items-center gap-2" target="_blank">
+                        <i class="fi fi-brands-github"></i>
+                    </a>
+                </li>
+                <li class="hover:text-blue-600">
+                    <a href="https://wa.me/qr/O43EG6NVZ3QCE1" class="flex justiy-center items-center gap-2" target="_blank">
+                        <i class="fi fi-brands-whatsapp"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- créditos e copy -->
+            <div class="flex justify-center itmes-center w-full text-sm">
+                <p class="text-center pb-3">
+                    &copy; 2023 
+                    <a href="https://github.com/llipe20/projeto-galland" target="_blank">
+                        projeto-galland
+                    </a> 
+                    - Criado e desenvolvido por 
+                    <a href="https://portfolio-felipe-gamma.vercel.app/" class="text-blue-600 cursor-pointer" target="_blank">
+                        llpe
+                    </a>
+                </p>
+            </div>
+        </footer>
     </div>
     <script src="function.js"></script>
 </body>
