@@ -239,7 +239,7 @@
                                 copiado
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                        <div class="flex flex-col justify-center items-center lg:items-start w-full h-auto  bg-gray-800 rounded-b p-4">
                             <span class="font text-sm lg:text-base" id="get-pedido">
                                 http://localhost/api/routers/pedidos.php
                             </span>
@@ -323,7 +323,7 @@
                             </span>
                              
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                        <div class="flex flex-col justify-center items-center lg:items-start w-full h-auto bg-gray-800 rounded-b p-4">
                             <span class="font text-sm lg:text-base" id="get-produto">
                                 http://localhost/api/routers/produtos.php
                             </span>
@@ -412,7 +412,7 @@
                                 copiado
                             </span>
                         </div>
-                        <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-4">
+                        <div class="flex flex-col justify-center items-center lg:items-start w-full h-auto  bg-gray-800 rounded-b p-4">
                             <span class="font text-sm lg:text-base" id="get-user">
                                 http://localhost/api/routers/login.php/2
                             </span>
@@ -435,6 +435,7 @@
 }</code></pre>
                         </div>
                     </div>
+
                     <!-- TESTE DE API GET -->
                     <h2 id="test-get" class="text-2xl lg:text-4xl text-white lg:mt-5 lg:mb-5 mt-2 mb-2">
                         Teste de API GET
@@ -472,7 +473,7 @@
                             </span>
                         </div>
                         <div  class="flex flex-col justify-start items-start w-full h-auto bg-gray-800 rounded-b text-start p-5">
-                            <pre class="font text-base"><code id="code-result"></code></pre>
+                            <pre class="font text-base"><code id="code-result" class="max-w-full"></code></pre>
                         </div>
                     </div>
                 </div>
@@ -511,11 +512,11 @@
 const data = 
 {
     "id_login":"Int", // id do usuário
-    "pedido_valor": "Float", // valor da compra
+    "pedido_valor": "Float",
     "pedido_pagamento": "String",
     "pedido_situacao": "String", 
     "pedido_obs": "String", 
-    "pedido_delivery": "Boolean", // sim ou não,
+    "pedido_delivery": "Boolean",
     "cliente_id": "Int", // id do cliente
     "cliente_nome": "String",  
     "cliente_email": "String",
@@ -526,8 +527,8 @@ const data =
     "cliente_referencia": "String",
     "produtos": [
         {
-            "produto_id": "Int", // id do produto
-que está consumindo.
+            "produto_id": "Int", // id do 
+produto que está consumindo.
             "quantidade_produto": "Int"
         }
     ],
@@ -567,13 +568,13 @@ console.log(res)
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
-<pre class="font text-sm lg:text-base"><code>{message: 'Pedido adiconado com sucesso.'} or
+<pre class="font text-sm lg:text-base"><code>{message: 'Adiconado com sucesso.'} or
 {error: 'Erro: exibição do erro}</code></pre>
                         </div>
                     </div>
                 </div>
                 
-                <!-- get produtos -->
+                <!-- post produtos -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
                     <h3 class="text-xl text-2xl text-blue-600">
                         Produtos
@@ -601,20 +602,22 @@ console.log(res)
 const data = 
     {
         "nome" : "String",
-        "tipo" : "String", // 'produto' ou 
-'adicional'
+        "tipo" : "String", // 'produto' 
+ou 'adicional'
         "imagem" : "String",
-        "valor" : "Float", // valor da unidade
+        "valor" : "Float", // valor 
+da unidade
         "estoque" : "Int"
     }
 
-    const url = 'http://localhost/api/routers
-/produtos.php'
+    const url = 'http://localhost/api/
+routers/produtos.php'
 
     req = await fetch(url, {
         method: 'POST',
         headers: 
-        { 'Content-Type': 'application/json' },
+        { 'Content-Type': 'application
+/json' },
         body: JSON.stringify(data)
 })
     const res = await req.json()
@@ -635,13 +638,13 @@ const data =
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
-<pre class="font text-sm lg:text-base"><code>{message: 'Produto adiconado com sucesso.'} or
-{error: 'Erro ao adicionar: exibição do erro}</code></pre>
+<pre class="font text-sm lg:text-base"><code>{message: 'Adiconado com sucesso.'} or
+{error: 'Erro: exibição do erro}</code></pre>
                         </div>
                     </div>
                 </div>
 
-                <!-- get usuários -->
+                <!-- post usuários -->
                 <div class="flex flex-col justify-evenly items-start gap-5 w-full">
                     <h3 class="text-xl text-2xl text-blue-600" onclick="copy('usuario')">
                         Usuários
@@ -678,13 +681,14 @@ const data =
         "senha" : "String"
     }
 
-    const url = 'http://localhost/api/routers
-/login.php'
+    const url = 'http://localhost/
+api/routers/login.php'
 
     req = await fetch(url, {
         method: 'POST',
         headers: 
-        { 'Content-Type': 'application/json' },
+        { 'Content-Type': 'application
+/json' },
         body: JSON.stringify(data)
 })
     const res = await req.json()
@@ -701,8 +705,8 @@ const data =
                             </span>
                         </div>
                         <div class="flex flex-col justify-center items-start w-full h-auto  bg-gray-800 rounded-b p-6">
-<pre class="font text-sm lg:text-base"><code>{message: 'Usuario criado com sucesso.'} or
-{error: 'Erro ao adicionar: exibição do erro}</code></pre>
+<pre class="font text-sm lg:text-base"><code>{message: 'Criado com sucesso.'} or
+{error: exibição do erro}</code></pre>
                         </div>
                     </div>
                 </div>
