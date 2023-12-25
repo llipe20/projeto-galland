@@ -108,3 +108,20 @@ async function newProdut() {
         console.log(res)
 }
 
+async function TestGet() {
+    const endpont = document.getElementById("input-test-get").value
+    const result = document.getElementById("code-result")
+
+    if(endpont == '' || endpont == null) {
+        result.textContent = '{error: Insira um endpoint válido!}'
+    } else {
+        const req = await fetch(endpont)
+        const res = await req.json()
+
+        if(res == null || res == '') {
+            result.textContent = '{message: User não encontrado ou endpoint inválido!}'
+        } else {
+            result.textContent = JSON.stringify(res,null,2)
+        }   
+    }
+}

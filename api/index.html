@@ -17,6 +17,27 @@
             font-family: 'Fira Code', monospace;
         }
     </style>
+    <script>
+        async function TestGet() {
+            const endpont = document.getElementById("input-test-get").value
+            const result = document.getElementById("code-result")
+
+            if(endpont == '' || endpont == null) {
+                result.textContent = '{error: Insira um endpoint válido!}'
+            } else {
+                const req = await fetch(endpont)
+                const res = await req.json()
+
+                if(res == null || res == '') {
+                    result.textContent = '{message: User não encontrado ou endpoint inválido!}'
+                } else {
+                    result.textContent = JSON.stringify(res,null,2)
+                }   
+            }
+            const boxHidden = document.getElementById("box-hidden")
+            boxHidden.classList.remove("hidden")
+        }
+    </script>
 </head>
 <body class="overflow-x-hidden">
     <div class="flex w-screen min-h-screen bg text-slate-400">
@@ -49,8 +70,8 @@
                     </div>
 
                     <div class="flex flex-row gap-2.5 justify-center items-center w-1/2 h-10 pl-2">
-                        <a href="#usar" class="text-lg text-left w-full hover:border-b border-slate-700">
-                            Como usar
+                        <a href="#test-get" class="text-lg text-left w-full hover:border-b border-slate-700">
+                            Teste GET
                         </a>
                     </div>
                 </div>
@@ -119,11 +140,11 @@
                 </h2>
 
                 <p class="w-4/5">
-                    O projeto consiste em desenvolver uma mini API para fazer a ponte entre um banco de dados e o front end de uma aplicação especifica. Ou seja, a api servirá apenas para essa aplicação, a menos que queira usar pra testar mesmo.
+                    O projeto consiste em desenvolver uma mini API para fazer a ponte entre um banco de dados e o front end de uma aplicação pessoal, um sistema online de pedidos/cardápiio. Ou seja, a api servirá apenas para essa aplicação, a menos que queira usar pra testar mesmo.
                 </p>
 
                 <p class="w-4/5">
-                    A aplicação especifica, é a construção de um cardápio online para uma sorveteria, onde pretendo usar esta API para coletar os dados de clientes, pedidos e produtos no banco de dados, trazendo mais dinamismo, facilitando o trabalho do desenvolvedor.
+                    A aplicação especifica, é a construção de um cardápio online para uma sorveteria, onde pretendo usar esta API para coletar e adicionar os dados de clientes, pedidos e produtos no banco de dados, trazendo mais dinamismo, facilitando o trabalho do desenvolvedor, no caso eu.
                 </p>
             </section>
 
@@ -186,54 +207,38 @@
                            <pre class="font text-base">
 <code >
     {
-        "pedido_id": "1",
-        "pedido_valor": "50.00",
-        "pedido_pagamento": "PIX",
-        "pedido_situacao": "Finalizado",
-        "pedido_obs": "",
-        "pedido_delivery": "0",
-        "cliente_id": "1",
-        "cliente_nome": "Felipe",
-        "cliente_email": "fs2284511@mail.com",
-        "cliente_fone": "(99) 98447-0567",
-        "cliente_rua": "Vinte e um de abril",
-        "cliente_bairro": "Volta Redonda",
-        "cliente_casa": "1279",
-        "cliente_referencia": "Prox a escoila",
+        "pedido_id": Int,
+        "pedido_valor": Float,
+        "pedido_pagamento": String,
+        "pedido_situacao": String,
+        "pedido_obs": String,
+        "pedido_delivery": Boolean,
+        "cliente_id": Int,
+        "cliente_nome": String,
+        "cliente_email": String,
+        "cliente_fone": String,
+        "cliente_rua": String,
+        "cliente_bairro": String,
+        "cliente_casa": String,
+        "cliente_referencia": String,
         "produtos": [
             {
-                "produto_id": "1",
-                "produto_nome": "Açai 200ml",
-                "produto_tipo": "Açais",
-                "quantidade_produto": "1",
-                "produto_imagem": "null",
-                "produto_valor": "12.00"
-            },
-            {
-                "produto_id": "1",
-                "produto_nome": "Açai 200ml",
-                "produto_tipo": "Açais",
-                "quantidade_produto": "1",
-                "produto_imagem": "null",
-                "produto_valor": "12.00"
+                "produto_id": Int,
+                "produto_nome": String,
+                "produto_tipo": String,
+                "quantidade_produto": Int,
+                "produto_imagem": URL,
+                "produto_valor": Float
             }
         ],
         "adicionais": [
             {
-                "adicional_id": "1",
-                "adicional_nome": "chocolate",
-                "adicional_tipo": "Adicionais",
-                "quantidade_adicional": "1",
-                "adicional_imagem": "null",
-                "adicional_valor": "2.00"
-            },
-            {
-                "adicional_id": "2",
-                "adicional_nome": "banana",
-                "adicional_tipo": "Adicionais",
-                "quantidade_adicional": "2",
-                "adicional_imagem": "null",
-                "adicional_valor": "2.00"
+                "adicional_id": Int,
+                "adicional_nome": String,
+                "adicional_tipo": String,
+                "quantidade_adicional": Int,
+                "adicional_imagem": URL,
+                "adicional_valor": Float
             }
         ]
     }
@@ -291,38 +296,38 @@
     {
         "produtos": [
             {
-                "id": "1",
-                "nome": "Açai 200ml",
-                "tipo": "Açais",
-                "imagem": "null",
-                "valor": "12.00",
-                "estoque": "22"
+                "id": Int,
+                "nome": String,
+                "tipo": String,
+                "imagem": URL,
+                "valor": Float,
+                "estoque": Int
             },
             {
-                "id": "2",
-                "nome": "Açai 350ml",
-                "tipo": "Açais",
-                "imagem": "null",
-                "valor": "15.00",
-                "estoque": "33"
+                "id": Int,
+                "nome": String,
+                "tipo": String,
+                "imagem": URL,
+                "valor": Float,
+                "estoque": Int
             }
         ],
         "adicionais": [
             {
-                "id": "1",
-                "nome": "chocolate",
-                "tipo": "Adicionais",
-                "imagem": "null",
-                "valor": "2.00",
-                "estoque": "20"
+                "id": Int,
+                "nome": String,
+                "tipo": String,
+                "imagem": URL,
+                "valor": Float,
+                "estoque": Int
             },
             {
-                "id": "2",
-                "nome": "banana",
-                "tipo": "Adicionais",
-                "imagem": "null",
-                "valor": "2.00",
-                "estoque": "40"
+                "id": Int,
+                "nome": String,
+                "tipo": String,
+                "imagem": URL,
+                "valor": Float,
+                "estoque": Int
             }
         ]
     }
@@ -378,13 +383,54 @@
                             <pre class="font text-base">
 <code>
     {
-        "id": "2",
-        "nome": "Nara",
-        "usuario": "silvahlipe@gmail.com",
-        "senha": "https:\/\/localhost:3000"
+        "id": Int,
+        "nome": String
+        "usuario": String,
+        "senha": String
     }
 </code>
                             </pre>
+                        </div>
+                    </div>
+                    <!-- TESTE DE API GET -->
+                    <h2 id="test-get" class="text-4xl text-white mt-5 mb-5">
+                        Teste de API GET
+                    </h2>
+                    <!-- entrada endpopint -->
+                     <form id="form" class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl">
+
+                        <div class="flex flex-row justify-between items-center w-full h-10 bg-blue-900 p-6 pl-4 pr-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Endpoint:
+                            </span>
+
+                            <input 
+                                class="flex justify-center items-center w-auto pl-2 pr-2 h-auto border rounded text-base text-white bg-green-800 shadow" 
+                                type="submit"
+                                value="Executar"
+                                onclick="TestGet()"
+                            > 
+                        </div>
+                        <div class="flex flex-col justify-center items-start w-full h-16 rounded-b bg-gray-800">
+                            <input 
+                                type="text" 
+                                id="input-test-get" 
+                                class="w-full h-full p-4 border-0 outline-0 bg-gray-800"
+                                placeholder="Cole o endpoint aqui"
+                                autofocus
+                            >
+                        </div>
+                    </form>
+                    
+                    <!-- saida -->
+                    <div id="box-hidden" class="flex flex-col justify-between items-center w-4/5 h-auto rounded-xl hidden">
+                        <div class="flex flex-row justify-start items-center w-full h-10 bg-blue-900 pl-4 rounded-t">
+                            <span class="text-lg text-white">
+                                Resultado:
+                            </span>
+                        </div>
+                        <div  class="flex flex-col justify-start items-start w-full h-auto bg-gray-800 rounded-b text-start p-5">
+                            <pre class="font text-base"><code id="code-result"></code></pre>
                         </div>
                     </div>
                 </div>
